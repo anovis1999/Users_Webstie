@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Navbar from './components/Navbar';
+import SignUpForm from './components/SignUpForm';
+import SignInForm from './components/SignInForm';
+import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<Router basename="/">
+  <Navbar></Navbar>
+        <div className="App">
+          <div className="App__Aside"></div>
+          <div className="App__Form">
+              <Route exact path="/" component={SignInForm}>
+              </Route>
+              <Route path="/sign-up" component={SignUpForm}>
+              </Route>
+          </div>
+
+        </div>
+      </Router>
   );
 }
 
