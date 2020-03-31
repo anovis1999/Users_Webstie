@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
 import '../App.css'
 import axios from 'axios';
+
 class SignUpForm extends Component {
     constructor() {
         super();
@@ -11,7 +12,9 @@ class SignUpForm extends Component {
             email: '',
             password: '',
             name: '',
-            hasAgreed: false
+            user_privilege: 'member',
+            mail_group:'',
+            hasAgreed: "false"
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,7 +27,7 @@ class SignUpForm extends Component {
         let name = target.name;
 
         this.setState({
-          [name]: value
+          [name]: value.toString()
         });
     }
 
@@ -33,7 +36,7 @@ class SignUpForm extends Component {
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);
-        axios.post('http://127.0.0.1:5000/', this.state)
+        axios.post('http://127.0.0.1:5000/sign-up', this.state)
           .then(function (response) {
             console.log(response);
           })

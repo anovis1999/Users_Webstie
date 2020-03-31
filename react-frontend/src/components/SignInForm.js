@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField';
-import '../App.css'
+import '../App.css';
+import axios from 'axios';
 
 class SignInForm extends Component {
     constructor() {
@@ -31,6 +32,13 @@ class SignInForm extends Component {
 
         console.log('The form was submitted with the following data:');
         console.log(this.state);
+        axios.post('http://127.0.0.1:5000/', this.state)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
 
     render() {
