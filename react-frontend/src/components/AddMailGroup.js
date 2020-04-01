@@ -8,25 +8,29 @@ class AddMailGroups extends Component {
       super();
 
       this.state = {
-        groupmail: '',
-        email: ''
-
-
+        email: '',
+        groupmail: ''
       };
 
       this.handleChange = this.handleChange.bind(this);
+      this.handleChangeG = this.handleChangeG.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-      let target = e.target;
-      let value = target.type === 'checkbox' ? target.checked : target.value;
-      let name = target.name;
 
       this.setState({
-        [name]: value
+        email: e.target.value
       });
   }
+
+  handleChangeG(e) {
+
+    this.setState({
+      groupmail: e.target.value
+    });
+  }
+
 
   handleSubmit(e) {
       e.preventDefault();
@@ -50,16 +54,16 @@ class AddMailGroups extends Component {
 
           <form onSubmit={this.handleSubmit} className="FormFields">
               <div className="n1">
-              <TextField className="group" id="outlined-basic" label="group E-Mail Address" variant="outlined" type="email" id="email" className="FormField__Input" placeholder="Enter Group email" name="email" ref={input => this.groupmail = input} onChange={this.handleChange} />
+              <TextField className="group" id="outlined-basic" label="group E-Mail Address" variant="outlined" type="email" id="email" className="FormField__Input" placeholder="Enter Group email" name="email" value={this.state.groupmail} onChange={this.handleChangeG} />
               </div>
             <br></br> 
             <br></br> 
             <div className="n2">
-              <TextField className="single" id="outlined-basic" label="E-Mail Address" variant="outlined" type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" ref={input => this.email = input} onChange={this.handleChange} />
+              <TextField className="single" id="outlined-basic" label="E-Mail Address" variant="outlined" type="email" id="email" className="FormField__Input" placeholder="Enter your email" name="email" value={this.state.email} onChange={this.handleChange} />
               </div>
             <br></br>
 
-            {/* <input></input> */}
+
             <div className="FormField">
                 <button className="FormField__Button">submit</button> 
             </div>

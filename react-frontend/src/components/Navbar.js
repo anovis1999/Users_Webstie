@@ -32,11 +32,9 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-          
-            MAIL
           </Typography>
-          <Link to="/mail" className="FormField__Link">
-          <Button color="inherit" >MAIL</Button>
+          <Link to="/mail" className="FormField__Link_Nav">
+          <Button color="inherit" >ADD GROUP MAIL</Button>
           </Link>
         </Toolbar>
       </AppBar>

@@ -59,6 +59,14 @@
   padding-bottom: 5px;
 }
 
+.FormField__Link_Nav {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1.5px solid #225E62;
+  padding-bottom: 5px;
+}
+
 .FormField__TermsLink {
   color: black;
   border-bottom: 1px solid #199087;

@@ -1,6 +1,6 @@
 from flask import request
 import flask
-from functions import insert_mongo
+from functions import insert_mongo, update_group_mail_in_db, build_mail_tree
 import json
 
 app = flask.Flask("__main__")
@@ -29,7 +29,15 @@ def sign_up():
 def add_mail_group():
     data = request.data
     data = json.loads(data)
+    update_group_mail_in_db(data)
     print data
     return "success"
+
+
+@app.route('/mail', methods='GET')
+def load_mail_tree():
+    mail_tree = build_mail_tree()
+    print mail_tree
+    return mail_tree
 
 app.run(debug=True)
