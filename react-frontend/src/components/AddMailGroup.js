@@ -46,6 +46,8 @@ class AddMailGroups extends Component {
         });
   }
 
+
+
   render() {
       return (
       <div className="FormCenter">
@@ -67,8 +69,10 @@ class AddMailGroups extends Component {
             <div className="FormField">
                 <button className="FormField__Button">submit</button> 
             </div>
-
+              <br></br>
           </form>
+
+
         </div>
       );
   }

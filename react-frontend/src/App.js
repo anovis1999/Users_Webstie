@@ -6,6 +6,7 @@ import SignInForm from './components/SignInForm';
 import AddMailGroup from './components/AddMailGroup';
 
 import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import BuildTree from './containers/BuildTree';
 
 
 
@@ -21,6 +22,8 @@ function App() {
               <Route path="/sign-up" component={SignUpForm}>
               </Route>
               <Route path="/mail" component={AddMailGroup}>
+              </Route>
+              <Route path="/mailtree" component={BuildTree}>
               </Route>
           </div>
 

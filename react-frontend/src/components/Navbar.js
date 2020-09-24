@@ -36,6 +36,10 @@ export default function ButtonAppBar() {
           <Link to="/mail" className="FormField__Link_Nav">
           <Button color="inherit" >ADD GROUP MAIL</Button>
           </Link>
+          <Link to="/mailtree" className="FormField__Link_Nav">
+          <Button color="inherit" >Watch Tree</Button>
+          </Link>
+          
         </Toolbar>
       </AppBar>
     </div>

@@ -50,7 +50,7 @@ def build_mail_groups_dict():
 
 def build_mail_tree():
     results = []
-    tree_dict ={}
+    tree_dict =[]
     mails_group =build_mail_groups_dict()
 
     for mail in range(len(mails_group)):
@@ -59,12 +59,11 @@ def build_mail_tree():
         a = mails_group.keys()[mail]
         a = a.encode('utf-8')
         a = results[mail]
-        tree_dict.update({mails_group.keys()[mail]: a})
+        tree_dict.append({mails_group.keys()[mail]: a})
 
     print tree_dict
     return tree_dict
 
-# build_mail_groups_dict()
 
 # search_user_mongo({"email": "awq@gmail.com"})
 
