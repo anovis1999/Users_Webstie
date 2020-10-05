@@ -38,6 +38,8 @@ def add_mail_group():
 def load_mail_tree():
     mail_tree = build_mail_tree()
     mail_tree = ast.literal_eval(json.dumps(mail_tree))
+    mail_tree = str(mail_tree)
+    mail_tree = mail_tree.replace("'","\"")
     print mail_tree
     return str(mail_tree)
 
